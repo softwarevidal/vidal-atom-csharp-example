@@ -20,6 +20,9 @@ namespace AtomTester
         
         private ProductDetail productDetailForm;
         private PackDetail packDetailForm;
+        private ProductsByMoleculeForm productByMoleculeForm;
+        private ProductsAndPacksByCompanyForm productsAndPacksByCompanyForm;
+        private RecoForm recoForm;
 
         public SearchForm()
         {
@@ -40,6 +43,8 @@ namespace AtomTester
             searchNonPharma();
             searchBalneo();
             searchRecos();
+            searchMolecules();
+            searchCompanies();
         }
 
         private void searchHumanDrug()
@@ -100,6 +105,26 @@ namespace AtomTester
             int itemPerPage = recosFeedSearched.ElementExtensions.ReadElementExtensions<int>("itemsPerPage", "http://a9.com/-/spec/opensearch/1.1/")[0];
             recosResultLabel.Text = ((page - 1) * itemPerPage + recosFeedSearched.Items.ToArray<SyndicationItem>().Length) + "/" + max;
             recosDataGridView.DataSource = RestUtils.getRecosBySyndicationFeed(recosFeedSearched.Items);
+        }
+
+        private void searchMolecules()
+        {
+            SyndicationFeed moleculesFeedSearched = RestUtils.getMoleculeFeedsByName(searchBox.Text, (int)moleculesPage.Value, (int)moleculeResultSet.Value);
+            int max = moleculesFeedSearched.ElementExtensions.ReadElementExtensions<int>("totalResults", "http://a9.com/-/spec/opensearch/1.1/")[0];
+            int page = moleculesFeedSearched.ElementExtensions.ReadElementExtensions<int>("startIndex", "http://a9.com/-/spec/opensearch/1.1/")[0];
+            int itemPerPage = moleculesFeedSearched.ElementExtensions.ReadElementExtensions<int>("itemsPerPage", "http://a9.com/-/spec/opensearch/1.1/")[0];
+            moleculeResultLabel.Text = ((page - 1) * itemPerPage + moleculesFeedSearched.Items.ToArray<SyndicationItem>().Length) + "/" + max;
+            moleculesDataGridView.DataSource = RestUtils.getMoleculesBySyndicationFeed(moleculesFeedSearched.Items);
+        }
+
+        private void searchCompanies()
+        {
+            SyndicationFeed companiesFeedSearched = RestUtils.getCompaniesFeedsByName(searchBox.Text, (int)companyPage.Value, (int)companyResultSet.Value);
+            int max = companiesFeedSearched.ElementExtensions.ReadElementExtensions<int>("totalResults", "http://a9.com/-/spec/opensearch/1.1/")[0];
+            int page = companiesFeedSearched.ElementExtensions.ReadElementExtensions<int>("startIndex", "http://a9.com/-/spec/opensearch/1.1/")[0];
+            int itemPerPage = companiesFeedSearched.ElementExtensions.ReadElementExtensions<int>("itemsPerPage", "http://a9.com/-/spec/opensearch/1.1/")[0];
+            companyresultLabel.Text = ((page - 1) * itemPerPage + companiesFeedSearched.Items.ToArray<SyndicationItem>().Length) + "/" + max;
+            companyDataGridView.DataSource = RestUtils.getCompaniesBySyndicationFeed(companiesFeedSearched.Items);
         }
      
         private void nextButton_Click(object sender, EventArgs e)
@@ -188,6 +213,36 @@ namespace AtomTester
             searchDietetic();
         }
 
+        private void moleculePrevButton_Click(object sender, EventArgs e)
+        {
+            if (moleculesPage.Value > 1)
+                moleculesPage.Value--;
+            searchMolecules();
+        }
+
+        private void moleucleNextButton_Click(object sender, EventArgs e)
+        {
+            moleculesPage.Value++;
+            searchMolecules();
+        }
+
+
+
+        private void companyPrevButton_Click(object sender, EventArgs e)
+        {
+            if (companyPage.Value > 1)
+                companyPage.Value--;
+            searchCompanies();
+        }
+
+        private void companyNextButton_Click(object sender, EventArgs e)
+        {
+            companyPage.Value++;
+            searchCompanies();
+        }
+
+
+
         private void accessoryDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex > -1)
@@ -238,8 +293,43 @@ namespace AtomTester
 
         private void recosDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            MessageBox.Show("Recos Windows not implemeted yet");
+            if (e.RowIndex > -1)
+            {
+               Reco reco = (Reco)recosDataGridView.Rows[e.RowIndex].DataBoundItem;
+
+                recoForm = new RecoForm(reco.recolink);
+                recoForm.Visible = true;
+
+            }
         }
 
+        private void moleculesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                MoleculeSynonym molec = (MoleculeSynonym)moleculesDataGridView.Rows[e.RowIndex].DataBoundItem;
+
+                productByMoleculeForm = new ProductsByMoleculeForm(molec.productsLink);
+                productByMoleculeForm.Visible = true;
+
+            }
+        }
+
+      
+
+        private void companyDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (e.RowIndex > -1)
+            {
+                Company company = (Company)companyDataGridView.Rows[e.RowIndex].DataBoundItem;
+
+                productsAndPacksByCompanyForm = new ProductsAndPacksByCompanyForm(company.productsLink,company.packagesLink);
+                productsAndPacksByCompanyForm.Visible = true;
+
+            }
+        }
+
+       
           }
 }

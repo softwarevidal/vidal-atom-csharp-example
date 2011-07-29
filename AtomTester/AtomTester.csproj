@@ -61,6 +61,24 @@
     <Compile Include="ProductDetail.Designer.cs">
       <DependentUpon>ProductDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductsAndPacksByCompanyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductsAndPacksByCompanyForm.Designer.cs">
+      <DependentUpon>ProductsAndPacksByCompanyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductsByMoleculeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductsByMoleculeForm.Designer.cs">
+      <DependentUpon>ProductsByMoleculeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecoForm.Designer.cs">
+      <DependentUpon>RecoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="RestUtils.cs" />
     <Compile Include="SearchForm.cs">
       <SubType>Form</SubType>
@@ -70,6 +88,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VidalDTO\Company.cs" />
+    <Compile Include="VidalDTO\MoleculeSynonym.cs" />
     <Compile Include="VidalDTO\Lppr.cs" />
     <Compile Include="VidalDTO\SaumonClassification.cs" />
     <Compile Include="VidalDTO\GenericGroup.cs" />
@@ -96,12 +116,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RecoForm.resx">
+      <DependentUpon>RecoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SearchForm.resx">
       <DependentUpon>SearchForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\DataSources\Company.datasource" />
     <None Include="Properties\DataSources\Lppr.datasource" />
+    <None Include="Properties\DataSources\MoleculeSynonym.datasource" />
     <None Include="Properties\DataSources\Package.datasource" />
     <None Include="Properties\DataSources\Product.datasource" />
     <None Include="Properties\DataSources\Reco.datasource" />

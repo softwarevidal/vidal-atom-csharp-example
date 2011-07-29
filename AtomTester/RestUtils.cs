@@ -8,6 +8,7 @@ using System.Linq;
 using System.Xml.Linq;
 using AtomTester;
 using AtomTester.VidalDTO;
+using System.Collections.ObjectModel;
 
 public static class RestUtils
 {
@@ -62,20 +63,34 @@ public static class RestUtils
     {
         if (String.IsNullOrEmpty(name))
             return null;
-        return AtomResultRequest(new Uri(serverBaseUri, "/rest/rest/api/products?q=" + name + "&start-page=" + startedPage + "&page-size=" + maxPerPage));
+        return AtomResultRequest(new Uri(serverBaseUri, "/rest/api/products?q=" + name + "&start-page=" + startedPage + "&page-size=" + maxPerPage));
     }
     public static SyndicationFeed getPackageFeedsByName(String name, int startedPage, int maxPerPage,String type)
     {
         if (String.IsNullOrEmpty(name))
             return null;
-        return AtomResultRequest(new Uri(serverBaseUri, "/rest/rest/api/packages?q=" + name +"&type="+type +"&start-page=" + startedPage + "&page-size=" + maxPerPage));
+        return AtomResultRequest(new Uri(serverBaseUri, "/rest/api/packages?q=" + name +"&type="+type +"&start-page=" + startedPage + "&page-size=" + maxPerPage));
     }
 
     public static SyndicationFeed getRecosFeedsByName(String name, int startedPage, int maxPerPage)
     {
         if (String.IsNullOrEmpty(name))
             return null;
-        return AtomResultRequest(new Uri(serverBaseUri, "/rest/rest/api/recos?q=" + name + "&start-page=" + startedPage + "&page-size=" + maxPerPage));
+        return AtomResultRequest(new Uri(serverBaseUri, "/rest/api/recos?q=" + name + "&start-page=" + startedPage + "&page-size=" + maxPerPage));
+    }
+
+    public static SyndicationFeed getMoleculeFeedsByName(String name, int startedPage, int maxPerPage)
+    {
+        if (String.IsNullOrEmpty(name))
+            return null;
+        return AtomResultRequest(new Uri(serverBaseUri, "/rest/api/molecules?q=" + name + "&start-page=" + startedPage + "&page-size=" + maxPerPage));
+    }
+
+    public static SyndicationFeed getCompaniesFeedsByName(String name, int startedPage, int maxPerPage)
+    {
+        if (String.IsNullOrEmpty(name))
+            return null;
+        return AtomResultRequest(new Uri(serverBaseUri, "/rest/api/companies?q=" + name + "&start-page=" + startedPage + "&page-size=" + maxPerPage));
     }
    
 
@@ -161,7 +176,8 @@ public static class RestUtils
     {
         if (uri == null)
             return null;
-        return AtomResultRequest(new Uri(uri.AbsoluteUri+"?aggregate=PACKAGES&aggregate=MOLECULES&aggregate=RECOS&aggregate=GENERIC_INFOS&aggregate=VIDAL_CLASSIFICATION"));
+        Uri uriFinal = new Uri(uri.AbsoluteUri + "?aggregate=PACKAGES&aggregate=MOLECULES&aggregate=RECOS&aggregate=GENERIC_GROUPS&aggregate=VIDAL_CLASSIFICATION");
+        return AtomResultRequest(uriFinal);
     }
 
     private static ProductDetailAggregate getProductDetailByFeedItem(SyndicationFeed productFeed)
@@ -201,7 +217,7 @@ public static class RestUtils
         IEnumerable<SyndicationItem> packages = productFeed.Items.Where(l => (l.Categories[0].Name == "PACKAGE"));
         List<Package> packList = getPackagesBySyndicationFeed(packages);
 
-        IEnumerable<SyndicationItem> genGroups = productFeed.Items.Where(l => (l.Categories[0].Name == "GENERIC_INFO"));
+        IEnumerable<SyndicationItem> genGroups = productFeed.Items.Where(l => (l.Categories[0].Name == "GENERIC_GROUP"));
         List<GenericGroup> groups = new List<GenericGroup>();
         foreach (SyndicationItem group in genGroups)
         {
@@ -237,11 +253,66 @@ public static class RestUtils
             String recoName = item.Title.Text;
             int id = item.ElementExtensions.ReadElementExtensions<int>("id", vidalNameSpace).FirstOrDefault();
 
-            Reco reco = new Reco(id, recoName, null);
+            Uri altLink = null;
+            SyndicationLink altSyndicationLink = item.Links.FirstOrDefault(l => (l.RelationshipType == "alternate"));
+            if (altSyndicationLink != null)
+            {
+                altLink = altSyndicationLink.Uri;
+            }
+
+            Reco reco = new Reco(id, recoName, altLink);
             recoList.Add(reco);
         }
         return recoList;
     }
+
+    public static List<MoleculeSynonym> getMoleculesBySyndicationFeed(IEnumerable<SyndicationItem> molecules)
+    {
+        List<MoleculeSynonym> moleculeList = new List<MoleculeSynonym>();
+        foreach (SyndicationItem item in molecules)
+        {
+            int moleculeId = item.ElementExtensions.ReadElementExtensions<int>("id", vidalNameSpace).FirstOrDefault();;
+            String moleculeName = item.Title.Text;
+            Uri productsLink = null;
+            SyndicationLink productsSyndicationLink = item.Links.FirstOrDefault(l => (l.Title == "PRODUCTS"));
+            if (productsSyndicationLink != null)
+            {
+                productsLink = productsSyndicationLink.Uri;
+            }
+
+            String fullName = item.ElementExtensions.ReadElementExtensions<String>("fullName", vidalNameSpace).FirstOrDefault(); ; ;
+
+            MoleculeSynonym synonym = new MoleculeSynonym(moleculeId, moleculeName, null, productsLink, fullName);
+            moleculeList.Add(synonym);
+        }
+        return moleculeList;
+    }
+
+    public static List<Company> getCompaniesBySyndicationFeed(IEnumerable<SyndicationItem> companies)
+    {
+        List<Company> companyList = new List<Company>();
+        foreach (SyndicationItem item in companies)
+        {
+            int companyId = item.ElementExtensions.ReadElementExtensions<int>("id", vidalNameSpace).FirstOrDefault(); ;
+            String companyName = item.Title.Text;
+            Uri productsLink = null;
+            SyndicationLink productsSyndicationLink = item.Links.FirstOrDefault(l => (l.Title == "PRODUCTS"));
+            if (productsSyndicationLink != null)
+            {
+                productsLink = productsSyndicationLink.Uri;
+            }
+            Uri packagesLink = null;
+            SyndicationLink packagesSyndicationLink = item.Links.FirstOrDefault(l => (l.Title == "PACKAGES"));
+            if (packagesSyndicationLink != null)
+            {
+                packagesLink = packagesSyndicationLink.Uri;
+            }
+            Company company = new Company(companyId, companyName, packagesLink, productsLink);
+            companyList.Add(company);
+        }
+        return companyList;
+    }
+
     public static List<Package> getPackagesBySyndicationFeed(  IEnumerable<SyndicationItem> packagesFeed)
     {
         List<Package> packages = new List<Package>();
@@ -260,7 +331,14 @@ public static class RestUtils
             int packageId = packageFeed.ElementExtensions.ReadElementExtensions<int>("id", vidalNameSpace).FirstOrDefault();
             String companyName = packageFeed.ElementExtensions.ReadElementExtensions<String>("company", vidalNameSpace).FirstOrDefault();
             String marketStatus = packageFeed.ElementExtensions.ReadElementExtensions<String>("marketStatus", vidalNameSpace).FirstOrDefault();
-            String lppr = packageFeed.ElementExtensions.ReadElementExtensions<String>("lppr", vidalNameSpace).FirstOrDefault();
+
+            String lppr="";
+            String lpprCode="";
+            Collection<XElement> nodes = packageFeed.ElementExtensions.ReadElementExtensions<XElement>("lppr", vidalNameSpace);
+            if (nodes!=null){
+                lppr = nodes[0].Value;
+                lpprCode = nodes[0].Attribute("code").Value;
+            }
             String cip = packageFeed.ElementExtensions.ReadElementExtensions<String>("cip", vidalNameSpace).FirstOrDefault();
             
             String cip13 = packageFeed.ElementExtensions.ReadElementExtensions<String>("cip13", vidalNameSpace).FirstOrDefault();
@@ -276,7 +354,7 @@ public static class RestUtils
                 packageDocumentOpt = packageDocumentOptLink.Uri;
             }
 
-            Package pack = new Package(packageRelativeUri, packageId, packageName, companyName, marketStatus, lppr,cip,cip13,liste,pharmacistPrice,refundRate,refundingBase,packageDocumentOpt);
+            Package pack = new Package(packageRelativeUri, packageId, packageName, companyName, marketStatus, lppr,lpprCode,cip,cip13,liste,pharmacistPrice,refundRate,refundingBase,packageDocumentOpt);
             packages.Add(pack);
         }
         return packages;

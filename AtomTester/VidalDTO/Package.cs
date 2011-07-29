@@ -7,6 +7,9 @@ public class Package
     public readonly String companyName;
     public readonly String marketStatus;
     public readonly String lppr;
+    private readonly String lpprCode;
+ 
+
     public readonly float refundingBase;
     public readonly String cip13;
     public readonly String cip;
@@ -16,7 +19,7 @@ public class Package
     public readonly String refundRate;
     public readonly Uri monoRelativeUri;
 
-    public Package(Uri packageRelativeUri, int id, String name, String companyName, String marketStatus, String lppr, String cip, String cip13, String liste, float pharmacistPrice, String refundRate, float refundingBase, Uri monoRelativeUri)
+    public Package(Uri packageRelativeUri, int id, String name, String companyName, String marketStatus, String lppr,String lpprCode, String cip, String cip13, String liste, float pharmacistPrice, String refundRate, float refundingBase, Uri monoRelativeUri)
     {
         this.packageRelativeUri = packageRelativeUri;
         this.id = id;
@@ -31,6 +34,7 @@ public class Package
         this.refundingBase=refundingBase;
         this.marketStatus = marketStatus;
         this.monoRelativeUri = monoRelativeUri;
+        this.lpprCode = lpprCode;
     }
 
     
@@ -75,6 +79,10 @@ public class Package
     }
 
 
+    public String LpprCode
+    {
+        get { return lpprCode; }
+    }
     public float RefundingBase
     {
         get { return refundingBase; }
