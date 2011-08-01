@@ -45,6 +45,21 @@ namespace AtomTester
             searchRecos();
             searchMolecules();
             searchCompanies();
+
+            SyndicationFeed indicationTreeFeed = RestUtils.getFeedByUri(new Uri("http://107.20.249.150/rest/rest/api/indications?q=" + searchBox.Text));
+
+            IEnumerable<SyndicationItem> parents = indicationTreeFeed.Items.Where(l => (l.Categories[0].Name == "INDICATION_GROUP"));
+            foreach (SyndicationItem parent in parents)
+            {
+                TreeNode node = new TreeNode();
+                node.Name = parent.Id.ToString();
+                node.Text = parent.Title.Text;
+                getClassifChildren(indicationTreeFeed.Items, parent, node);
+                indicationTreeView.Nodes.Add(node);
+            }
+
+            indicationTreeView.ExpandAll();
+            
         }
 
         private void searchHumanDrug()
@@ -126,7 +141,30 @@ namespace AtomTester
             companyresultLabel.Text = ((page - 1) * itemPerPage + companiesFeedSearched.Items.ToArray<SyndicationItem>().Length) + "/" + max;
             companyDataGridView.DataSource = RestUtils.getCompaniesBySyndicationFeed(companiesFeedSearched.Items);
         }
-     
+
+
+
+
+        private static void getClassifChildren(IEnumerable<SyndicationItem> items, SyndicationItem parent, TreeNode node)
+        {
+            
+            IEnumerable<SyndicationItem> children = from item in items where item.Links.Count(l => l.Uri.ToString() == parent.Id ) >0 select item;
+            
+            foreach (SyndicationItem child in children)
+            {
+                TreeNode childNode = new TreeNode();
+
+                childNode.Name = child.Id;
+                childNode.Text = child.Title.Text;
+                node.Nodes.Add(childNode);
+                getClassifChildren(items, child, childNode);
+            }
+
+            
+
+        }      
+
+
         private void nextButton_Click(object sender, EventArgs e)
         {
             numericUpDown1.Value = numericUpDown1.Value +1;

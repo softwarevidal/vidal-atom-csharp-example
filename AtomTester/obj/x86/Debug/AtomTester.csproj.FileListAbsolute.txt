@@ -32,3 +32,5 @@ C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester
 C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
 C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.PackDetail.resources
 C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.RecoForm.resources
+C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.ProductsAndPacksByCompanyForm.resources
+C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.ProductsByMoleculeForm.resources

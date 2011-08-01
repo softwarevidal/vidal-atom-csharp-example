@@ -98,8 +98,11 @@
             this.moleucleNextButton = new System.Windows.Forms.Button();
             this.moleculePrevButton = new System.Windows.Forms.Button();
             this.moleculesDataGridView = new System.Windows.Forms.DataGridView();
+            this.indicationTreeView = new System.Windows.Forms.TreeView();
             this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.moleculeSynonymBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nameDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.companyNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.marketStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -121,8 +124,6 @@
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.recoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nameDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).BeginInit();
@@ -151,16 +152,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.companyResultSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyPage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyDataGridView)).BeginInit();
+            this.Indications.SuspendLayout();
             this.groupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.moleculeResultSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.moleculesPage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.moleculesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.moleculeSynonymBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.packageBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // searchButton
@@ -239,7 +241,7 @@
             this.urlTextBox.Name = "urlTextBox";
             this.urlTextBox.Size = new System.Drawing.Size(279, 20);
             this.urlTextBox.TabIndex = 15;
-            this.urlTextBox.Text = "http://107.20.249.150";
+            this.urlTextBox.Text = "http://107.20.249.150/rest";
             // 
             // button1
             // 
@@ -849,6 +851,7 @@
             // 
             // Indications
             // 
+            this.Indications.Controls.Add(this.indicationTreeView);
             this.Indications.Location = new System.Drawing.Point(12, 738);
             this.Indications.Name = "Indications";
             this.Indications.Size = new System.Drawing.Size(485, 231);
@@ -937,6 +940,13 @@
             this.moleculesDataGridView.TabIndex = 0;
             this.moleculesDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.moleculesDataGridView_CellContentClick);
             // 
+            // indicationTreeView
+            // 
+            this.indicationTreeView.Location = new System.Drawing.Point(9, 27);
+            this.indicationTreeView.Name = "indicationTreeView";
+            this.indicationTreeView.Size = new System.Drawing.Size(460, 198);
+            this.indicationTreeView.TabIndex = 0;
+            // 
             // fullNameDataGridViewTextBoxColumn
             // 
             this.fullNameDataGridViewTextBoxColumn.DataPropertyName = "FullName";
@@ -947,6 +957,17 @@
             // moleculeSynonymBindingSource
             // 
             this.moleculeSynonymBindingSource.DataSource = typeof(AtomTester.MoleculeSynonym);
+            // 
+            // nameDataGridViewTextBoxColumn3
+            // 
+            this.nameDataGridViewTextBoxColumn3.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn3.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn3.Name = "nameDataGridViewTextBoxColumn3";
+            this.nameDataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // companyBindingSource
+            // 
+            this.companyBindingSource.DataSource = typeof(AtomTester.Company);
             // 
             // nameDataGridViewTextBoxColumn1
             // 
@@ -1083,17 +1104,6 @@
             // 
             this.recoBindingSource.DataSource = typeof(AtomTester.Reco);
             // 
-            // companyBindingSource
-            // 
-            this.companyBindingSource.DataSource = typeof(AtomTester.Company);
-            // 
-            // nameDataGridViewTextBoxColumn3
-            // 
-            this.nameDataGridViewTextBoxColumn3.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn3.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn3.Name = "nameDataGridViewTextBoxColumn3";
-            this.nameDataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
             // SearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1152,17 +1162,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.companyResultSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyPage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyDataGridView)).EndInit();
+            this.Indications.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.moleculeResultSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.moleculesPage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.moleculesDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.moleculeSynonymBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.packageBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.recoBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.recoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1264,6 +1275,7 @@
         private System.Windows.Forms.BindingSource moleculeSynonymBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn3;
         private System.Windows.Forms.BindingSource companyBindingSource;
+        private System.Windows.Forms.TreeView indicationTreeView;
     }
 }
 

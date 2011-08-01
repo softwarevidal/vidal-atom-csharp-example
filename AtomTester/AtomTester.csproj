@@ -106,6 +106,12 @@
     <EmbeddedResource Include="ProductDetail.resx">
       <DependentUpon>ProductDetail.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ProductsAndPacksByCompanyForm.resx">
+      <DependentUpon>ProductsAndPacksByCompanyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductsByMoleculeForm.resx">
+      <DependentUpon>ProductsByMoleculeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

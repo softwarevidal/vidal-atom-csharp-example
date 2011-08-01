@@ -63,34 +63,34 @@ public static class RestUtils
     {
         if (String.IsNullOrEmpty(name))
             return null;
-        return AtomResultRequest(new Uri(serverBaseUri, "/rest/api/products?q=" + name + "&start-page=" + startedPage + "&page-size=" + maxPerPage));
+        return AtomResultRequest(new Uri(serverBaseUri + "/rest/api/products?q=" + name + "&start-page=" + startedPage + "&page-size=" + maxPerPage));
     }
     public static SyndicationFeed getPackageFeedsByName(String name, int startedPage, int maxPerPage,String type)
     {
         if (String.IsNullOrEmpty(name))
             return null;
-        return AtomResultRequest(new Uri(serverBaseUri, "/rest/api/packages?q=" + name +"&type="+type +"&start-page=" + startedPage + "&page-size=" + maxPerPage));
+        return AtomResultRequest(new Uri(serverBaseUri+ "/rest/api/packages?q=" + name +"&type="+type +"&start-page=" + startedPage + "&page-size=" + maxPerPage));
     }
 
     public static SyndicationFeed getRecosFeedsByName(String name, int startedPage, int maxPerPage)
     {
         if (String.IsNullOrEmpty(name))
             return null;
-        return AtomResultRequest(new Uri(serverBaseUri, "/rest/api/recos?q=" + name + "&start-page=" + startedPage + "&page-size=" + maxPerPage));
+        return AtomResultRequest(new Uri(serverBaseUri+ "/rest/api/recos?q=" + name + "&start-page=" + startedPage + "&page-size=" + maxPerPage));
     }
 
     public static SyndicationFeed getMoleculeFeedsByName(String name, int startedPage, int maxPerPage)
     {
         if (String.IsNullOrEmpty(name))
             return null;
-        return AtomResultRequest(new Uri(serverBaseUri, "/rest/api/molecules?q=" + name + "&start-page=" + startedPage + "&page-size=" + maxPerPage));
+        return AtomResultRequest(new Uri(serverBaseUri+ "/rest/api/molecules?q=" + name + "&start-page=" + startedPage + "&page-size=" + maxPerPage));
     }
 
     public static SyndicationFeed getCompaniesFeedsByName(String name, int startedPage, int maxPerPage)
     {
         if (String.IsNullOrEmpty(name))
             return null;
-        return AtomResultRequest(new Uri(serverBaseUri, "/rest/api/companies?q=" + name + "&start-page=" + startedPage + "&page-size=" + maxPerPage));
+        return AtomResultRequest(new Uri(serverBaseUri+ "/rest/api/companies?q=" + name + "&start-page=" + startedPage + "&page-size=" + maxPerPage));
     }
    
 
@@ -131,7 +131,15 @@ public static class RestUtils
 
 
 
-            Uri productRelativeUri = RestUtils.getAbsoluteUri(productFeed.Links[0].Uri);
+            //Uri productRelativeUri = RestUtils.getAbsoluteUri(productFeed.Links[0].Uri);
+            Uri productRelativeUri = null;
+            SyndicationLink productRelativeUriLink = (productFeed.Links.FirstOrDefault(l => (l.RelationshipType == "alternate")));
+
+            if (productRelativeUriLink != null)
+            {
+                productRelativeUri = productRelativeUriLink.Uri;
+            }
+
             int productId = productFeed.ElementExtensions.ReadElementExtensions<int>("id", vidalNameSpace).FirstOrDefault();
             String beCareful = productFeed.ElementExtensions.ReadElementExtensions<String>("beCareful", vidalNameSpace).FirstOrDefault();
             String genericType = productFeed.ElementExtensions.ReadElementExtensions<String>("genericType", vidalNameSpace).FirstOrDefault();
@@ -176,7 +184,7 @@ public static class RestUtils
     {
         if (uri == null)
             return null;
-        Uri uriFinal = new Uri(uri.AbsoluteUri + "?aggregate=PACKAGES&aggregate=MOLECULES&aggregate=RECOS&aggregate=GENERIC_GROUPS&aggregate=VIDAL_CLASSIFICATION");
+        Uri uriFinal = new Uri(getAbsoluteUri(uri) + "?aggregate=PACKAGES&aggregate=MOLECULES&aggregate=RECOS&aggregate=GENERIC_GROUPS&aggregate=VIDAL_CLASSIFICATION");
         return AtomResultRequest(uriFinal);
     }
 
@@ -273,12 +281,13 @@ public static class RestUtils
         {
             int moleculeId = item.ElementExtensions.ReadElementExtensions<int>("id", vidalNameSpace).FirstOrDefault();;
             String moleculeName = item.Title.Text;
-            Uri productsLink = null;
-            SyndicationLink productsSyndicationLink = item.Links.FirstOrDefault(l => (l.Title == "PRODUCTS"));
-            if (productsSyndicationLink != null)
-            {
-                productsLink = productsSyndicationLink.Uri;
-            }
+            Uri productsLink = new Uri(serverBaseUri + "/rest/api/molecule/"+moleculeId+"/products?"+"substance-type=ACTIVE_PRINCIPLE");
+            //fixMe : link is not good : /rest/api/molecule/2036/products?substanceType-type=ACTIVE_PRINCIPLE in place of "substance-type=ACTIVE_PRINCIPLE&association-type=ONLY"
+            //SyndicationLink productsSyndicationLink = item.Links.FirstOrDefault(l => (l.Title == "PRODUCTS"));
+            //if (productsSyndicationLink != null)
+            //{
+              //  productsLink = productsSyndicationLink.Uri;
+            //}
 
             String fullName = item.ElementExtensions.ReadElementExtensions<String>("fullName", vidalNameSpace).FirstOrDefault(); ; ;
 
@@ -335,7 +344,7 @@ public static class RestUtils
             String lppr="";
             String lpprCode="";
             Collection<XElement> nodes = packageFeed.ElementExtensions.ReadElementExtensions<XElement>("lppr", vidalNameSpace);
-            if (nodes!=null){
+            if (nodes!=null && nodes.Count>0){
                 lppr = nodes[0].Value;
                 lpprCode = nodes[0].Attribute("code").Value;
             }
@@ -407,4 +416,6 @@ public static class RestUtils
         packDetail.lpprs = lpprList;
         return packDetail;
     }
+
+    
 }
