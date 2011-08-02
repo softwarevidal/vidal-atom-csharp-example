@@ -21,7 +21,10 @@ public static class RestUtils
     {
         RestUtils.serverBaseUri = new Uri(serverBaseUri);
     }
-
+    public static Uri getServerParameters()
+    {
+        return serverBaseUri;
+    }
     public static Uri getAbsoluteUri(Uri uri)
     {
         return ((uri == null) || (uri.IsAbsoluteUri)) ? uri : new Uri(serverBaseUri, uri);
@@ -156,8 +159,18 @@ public static class RestUtils
             {
                 productDocumentOpt = productDocumentOptLink.Uri;
             }
-            String vmpName = productFeed.ElementExtensions.ReadElementExtensions<String>("vmp", vidalNameSpace).FirstOrDefault();
-            Product product = new Product(productRelativeUri, productId, productName, beCareful, genericType, companyName, dispensationPlace, marketStatus, refundRate, liste, productDocumentOpt, midwife, vigilance, vmpName);
+
+            String vmpName=null;
+            String vmpId=null;
+            Collection<XElement> nodes = productFeed.ElementExtensions.ReadElementExtensions<XElement>("vmp", vidalNameSpace);
+            if (nodes != null && nodes.Count > 0)
+            {
+                vmpName = nodes[0].Value;
+                vmpId = nodes[0].Attribute("vidalId").Value;
+            }
+
+
+            Product product = new Product(productRelativeUri, productId, productName, beCareful, genericType, companyName, dispensationPlace, marketStatus, refundRate, liste, productDocumentOpt, midwife, vigilance, vmpName,vmpId);
             return product;
         }
         else return null;
@@ -232,7 +245,7 @@ public static class RestUtils
             int id =group.ElementExtensions.ReadElementExtensions<int>("id", vidalNameSpace).FirstOrDefault(); 
             String name =group.Title.Text ;
             String type = group.ElementExtensions.ReadElementExtensions<String>("genericType", vidalNameSpace).FirstOrDefault();
-            SyndicationLink productSyndicationLink = group.Links.FirstOrDefault(l => (l.Title == "PRODUCT"));
+            SyndicationLink productSyndicationLink = group.Links.FirstOrDefault(l => (l.Title == "GENERIC_GROUP"));
             Uri productLink = null;
             if (productSyndicationLink != null)
             {

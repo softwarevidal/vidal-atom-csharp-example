@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EquivalentView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EquivalentView.Designer.cs">
+      <DependentUpon>EquivalentView.cs</DependentUpon>
+    </Compile>
     <Compile Include="PackDetail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,9 @@
     <Compile Include="VidalDTO\ProductDetailAggregate.cs" />
     <Compile Include="VidalDTO\Reco.cs" />
     <Compile Include="VidalDTO\VidalClassification.cs" />
+    <EmbeddedResource Include="EquivalentView.resx">
+      <DependentUpon>EquivalentView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PackDetail.resx">
       <DependentUpon>PackDetail.cs</DependentUpon>
     </EmbeddedResource>

@@ -69,7 +69,7 @@
             this.productResultLabel = new System.Windows.Forms.Label();
             this.productNextButton = new System.Windows.Forms.Button();
             this.productBackbutton = new System.Windows.Forms.Button();
-            this.titreCompany = new System.Windows.Forms.Label();
+            
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accessoryResultSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accessoryPage)).BeginInit();
@@ -522,21 +522,12 @@
             this.productBackbutton.Text = "<<";
             this.productBackbutton.UseVisualStyleBackColor = true;
             // 
-            // titreCompany
-            // 
-            this.titreCompany.AutoSize = true;
-            this.titreCompany.Location = new System.Drawing.Point(19, 33);
-            this.titreCompany.Name = "titreCompany";
-            this.titreCompany.Size = new System.Drawing.Size(35, 13);
-            this.titreCompany.TabIndex = 60;
-            this.titreCompany.Text = "label1";
-            // 
             // ProductsAndPacksByCompanyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1171, 796);
-            this.Controls.Add(this.titreCompany);
+            
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);

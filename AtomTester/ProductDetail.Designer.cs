@@ -34,24 +34,19 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.classifTreeView = new System.Windows.Forms.TreeView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cngLinkButton = new System.Windows.Forms.Button();
+            this.genLinkButton = new System.Windows.Forms.Button();
             this.cngTextBox = new System.Windows.Forms.TextBox();
             this.genGrpTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.vigiTextBox = new System.Windows.Forms.TextBox();
+            this.eenTextBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.packDataGridView = new System.Windows.Forms.DataGridView();
-            this.prescriptionListBox = new System.Windows.Forms.ListBox();
-            this.monoWebBrowser = new System.Windows.Forms.WebBrowser();
-            this.productTextBox = new System.Windows.Forms.TextBox();
-            this.laboTextBox = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.eenTextBox = new System.Windows.Forms.TextBox();
-            this.nurseTextBox = new System.Windows.Forms.TextBox();
-            this.vigiTextBox = new System.Windows.Forms.TextBox();
-            this.packageBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.companyNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,6 +55,13 @@
             this.lpprDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cip13DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.refundingBaseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.packageBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nurseTextBox = new System.Windows.Forms.TextBox();
+            this.prescriptionListBox = new System.Windows.Forms.ListBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.monoWebBrowser = new System.Windows.Forms.WebBrowser();
+            this.productTextBox = new System.Windows.Forms.TextBox();
+            this.laboTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -86,6 +88,7 @@
             this.recosListBox.Name = "recosListBox";
             this.recosListBox.Size = new System.Drawing.Size(311, 43);
             this.recosListBox.TabIndex = 0;
+            this.recosListBox.DoubleClick += new System.EventHandler(this.recosListBox_DoubleClick);
             // 
             // groupBox2
             // 
@@ -106,16 +109,38 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.cngLinkButton);
+            this.groupBox3.Controls.Add(this.genLinkButton);
             this.groupBox3.Controls.Add(this.cngTextBox);
             this.groupBox3.Controls.Add(this.genGrpTextBox);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Location = new System.Drawing.Point(25, 317);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(335, 140);
+            this.groupBox3.Size = new System.Drawing.Size(403, 140);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "EQUIVALENTS";
+            // 
+            // cngLinkButton
+            // 
+            this.cngLinkButton.Location = new System.Drawing.Point(328, 95);
+            this.cngLinkButton.Name = "cngLinkButton";
+            this.cngLinkButton.Size = new System.Drawing.Size(75, 23);
+            this.cngLinkButton.TabIndex = 5;
+            this.cngLinkButton.Text = "Link";
+            this.cngLinkButton.UseVisualStyleBackColor = true;
+            this.cngLinkButton.Click += new System.EventHandler(this.cngLinkButton_Click);
+            // 
+            // genLinkButton
+            // 
+            this.genLinkButton.Location = new System.Drawing.Point(328, 58);
+            this.genLinkButton.Name = "genLinkButton";
+            this.genLinkButton.Size = new System.Drawing.Size(75, 23);
+            this.genLinkButton.TabIndex = 4;
+            this.genLinkButton.Text = "Link";
+            this.genLinkButton.UseVisualStyleBackColor = true;
+            this.genLinkButton.Click += new System.EventHandler(this.genLinkButton_Click);
             // 
             // cngTextBox
             // 
@@ -162,6 +187,38 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "ATTENTION";
             // 
+            // vigiTextBox
+            // 
+            this.vigiTextBox.Location = new System.Drawing.Point(155, 120);
+            this.vigiTextBox.Name = "vigiTextBox";
+            this.vigiTextBox.Size = new System.Drawing.Size(161, 20);
+            this.vigiTextBox.TabIndex = 5;
+            // 
+            // eenTextBox
+            // 
+            this.eenTextBox.Location = new System.Drawing.Point(155, 34);
+            this.eenTextBox.Name = "eenTextBox";
+            this.eenTextBox.Size = new System.Drawing.Size(161, 20);
+            this.eenTextBox.TabIndex = 3;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(21, 120);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(102, 13);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "vigilance et conduit:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(21, 36);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(129, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Excipients à effet notoire :";
+            // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.packDataGridView);
@@ -193,88 +250,6 @@
             this.packDataGridView.Name = "packDataGridView";
             this.packDataGridView.Size = new System.Drawing.Size(306, 96);
             this.packDataGridView.TabIndex = 2;
-            // 
-            // prescriptionListBox
-            // 
-            this.prescriptionListBox.FormattingEnabled = true;
-            this.prescriptionListBox.Location = new System.Drawing.Point(6, 19);
-            this.prescriptionListBox.Name = "prescriptionListBox";
-            this.prescriptionListBox.Size = new System.Drawing.Size(311, 43);
-            this.prescriptionListBox.TabIndex = 1;
-            // 
-            // monoWebBrowser
-            // 
-            this.monoWebBrowser.Location = new System.Drawing.Point(31, 463);
-            this.monoWebBrowser.MinimumSize = new System.Drawing.Size(20, 20);
-            this.monoWebBrowser.Name = "monoWebBrowser";
-            this.monoWebBrowser.Size = new System.Drawing.Size(871, 375);
-            this.monoWebBrowser.TabIndex = 5;
-            // 
-            // productTextBox
-            // 
-            this.productTextBox.Location = new System.Drawing.Point(25, 27);
-            this.productTextBox.Name = "productTextBox";
-            this.productTextBox.Size = new System.Drawing.Size(534, 20);
-            this.productTextBox.TabIndex = 6;
-            // 
-            // laboTextBox
-            // 
-            this.laboTextBox.Location = new System.Drawing.Point(621, 27);
-            this.laboTextBox.Name = "laboTextBox";
-            this.laboTextBox.Size = new System.Drawing.Size(303, 20);
-            this.laboTextBox.TabIndex = 7;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 36);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(129, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Excipients à effet notoire :";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 88);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(124, 13);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "prescription sage-femme:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 120);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(102, 13);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "vigilance et conduit:";
-            // 
-            // eenTextBox
-            // 
-            this.eenTextBox.Location = new System.Drawing.Point(155, 34);
-            this.eenTextBox.Name = "eenTextBox";
-            this.eenTextBox.Size = new System.Drawing.Size(161, 20);
-            this.eenTextBox.TabIndex = 3;
-            // 
-            // nurseTextBox
-            // 
-            this.nurseTextBox.Location = new System.Drawing.Point(146, 85);
-            this.nurseTextBox.Name = "nurseTextBox";
-            this.nurseTextBox.Size = new System.Drawing.Size(161, 20);
-            this.nurseTextBox.TabIndex = 4;
-            // 
-            // vigiTextBox
-            // 
-            this.vigiTextBox.Location = new System.Drawing.Point(155, 120);
-            this.vigiTextBox.Name = "vigiTextBox";
-            this.vigiTextBox.Size = new System.Drawing.Size(161, 20);
-            this.vigiTextBox.TabIndex = 5;
-            // 
-            // packageBindingSource
-            // 
-            this.packageBindingSource.DataSource = typeof(Package);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -331,6 +306,56 @@
             this.refundingBaseDataGridViewTextBoxColumn.HeaderText = "RefundingBase";
             this.refundingBaseDataGridViewTextBoxColumn.Name = "refundingBaseDataGridViewTextBoxColumn";
             this.refundingBaseDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // packageBindingSource
+            // 
+            this.packageBindingSource.DataSource = typeof(Package);
+            // 
+            // nurseTextBox
+            // 
+            this.nurseTextBox.Location = new System.Drawing.Point(146, 85);
+            this.nurseTextBox.Name = "nurseTextBox";
+            this.nurseTextBox.Size = new System.Drawing.Size(161, 20);
+            this.nurseTextBox.TabIndex = 4;
+            // 
+            // prescriptionListBox
+            // 
+            this.prescriptionListBox.FormattingEnabled = true;
+            this.prescriptionListBox.Location = new System.Drawing.Point(6, 19);
+            this.prescriptionListBox.Name = "prescriptionListBox";
+            this.prescriptionListBox.Size = new System.Drawing.Size(311, 43);
+            this.prescriptionListBox.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(11, 88);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(124, 13);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "prescription sage-femme:";
+            // 
+            // monoWebBrowser
+            // 
+            this.monoWebBrowser.Location = new System.Drawing.Point(31, 463);
+            this.monoWebBrowser.MinimumSize = new System.Drawing.Size(20, 20);
+            this.monoWebBrowser.Name = "monoWebBrowser";
+            this.monoWebBrowser.Size = new System.Drawing.Size(871, 375);
+            this.monoWebBrowser.TabIndex = 5;
+            // 
+            // productTextBox
+            // 
+            this.productTextBox.Location = new System.Drawing.Point(25, 27);
+            this.productTextBox.Name = "productTextBox";
+            this.productTextBox.Size = new System.Drawing.Size(534, 20);
+            this.productTextBox.TabIndex = 6;
+            // 
+            // laboTextBox
+            // 
+            this.laboTextBox.Location = new System.Drawing.Point(621, 27);
+            this.laboTextBox.Name = "laboTextBox";
+            this.laboTextBox.Size = new System.Drawing.Size(303, 20);
+            this.laboTextBox.TabIndex = 7;
             // 
             // ProductDetail
             // 
@@ -395,5 +420,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cip13DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn refundingBaseDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource packageBindingSource;
+        private System.Windows.Forms.Button cngLinkButton;
+        private System.Windows.Forms.Button genLinkButton;
     }
 }

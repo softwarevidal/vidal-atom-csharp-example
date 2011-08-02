@@ -19,18 +19,19 @@ E:\dropBox\Dropbox\AtomTester\AtomTester\bin\Debug\AtomTester.exe
 E:\dropBox\Dropbox\AtomTester\AtomTester\bin\Debug\AtomTester.pdb
 E:\dropBox\Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.exe
 E:\dropBox\Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.pdb
-C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\bin\Debug\AtomTester.exe.config
-C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.exe
-C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.pdb
-C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\bin\Debug\AtomTester.exe
-C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\bin\Debug\AtomTester.pdb
 C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.PackDetail.resources
 C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.ProductDetail.resources
+C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.ProductsByMoleculeForm.resources
 C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.Properties.Resources.resources
+C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.RecoForm.resources
 C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.SearchForm.resources
 C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
 C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
-C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.PackDetail.resources
-C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.RecoForm.resources
 C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.ProductsAndPacksByCompanyForm.resources
-C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.ProductsByMoleculeForm.resources
+C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\bin\Debug\AtomTester.exe.config
+C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\bin\Debug\AtomTester.exe
+C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\bin\Debug\AtomTester.pdb
+C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.exe
+C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.pdb
+C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.EquivalentView.resources

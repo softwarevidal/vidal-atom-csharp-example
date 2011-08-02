@@ -18,9 +18,10 @@ public class Product
     //only in the detail
     public String vigilance;
     public String vmp;
+    public readonly String vmpId;
     public readonly String midwife;
 
-    public Product(Uri productRelativeUri, int id, String name, String beCareful,String genericType, String companyName, String dispensationPlace, String marketStatus, String refundRate,String liste,Uri productDocumentOpt,String midwife, String vigilance, String vmp)
+    public Product(Uri productRelativeUri, int id, String name, String beCareful,String genericType, String companyName, String dispensationPlace, String marketStatus, String refundRate,String liste,Uri productDocumentOpt,String midwife, String vigilance, String vmp,String vmpId)
     {
         this.productRelativeUri = productRelativeUri;
         this.id = id;
@@ -36,6 +37,7 @@ public class Product
         this.midwife = midwife;
         this.vigilance = vigilance;
         this.vmp = vmp;
+        this.vmpId = vmpId;
     }
 
   

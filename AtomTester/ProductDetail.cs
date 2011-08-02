@@ -13,11 +13,12 @@ namespace AtomTester
 
     public partial class ProductDetail : Form
     {
+
+        private ProductDetailAggregate pd;
         public ProductDetail(Uri uri)
         {
             InitializeComponent();
-
-            ProductDetailAggregate pd = (RestUtils.getProductDetail(uri));
+            this.pd = (RestUtils.getProductDetail(uri));
             productTextBox.Text = pd.product.Name;
             laboTextBox.Text = pd.product.CompanyName;
             foreach (Reco reco in pd.recos)
@@ -78,6 +79,28 @@ namespace AtomTester
 
             
 
+        }
+
+        private void recosListBox_DoubleClick(object sender, EventArgs e)
+        {
+            MessageBox.Show("ShowReco");
+        }
+
+        private void genLinkButton_Click(object sender, EventArgs e)
+        {
+            if(pd.GenericGroups!=null && pd.GenericGroups.Count>0){
+            EquivalentView form = new EquivalentView(pd.GenericGroups[0].genTypeLink, pd.GenericGroups[0].name+" : Products");
+            form.Visible = true;
+            }
+        }
+
+        private void cngLinkButton_Click(object sender, EventArgs e)
+        {
+            if (pd.product.vmpId != null)
+            {
+                EquivalentView form = new EquivalentView(new Uri(RestUtils.getServerParameters() + "/rest/api/vmp/"+pd.product.vmpId+"/products?"), pd.product.vmp + " : Products");
+                form.Visible = true;
+            }
         }      
     }
 }
