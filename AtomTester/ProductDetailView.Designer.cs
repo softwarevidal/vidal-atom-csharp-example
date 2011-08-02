@@ -1,6 +1,6 @@
 ﻿namespace AtomTester
 {
-    partial class ProductDetail
+    partial class ProductDetailView
     {
         /// <summary>
         /// Required designer variable.

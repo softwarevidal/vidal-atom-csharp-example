@@ -1,6 +1,6 @@
 ﻿namespace AtomTester
 {
-    partial class ProductsByMoleculeForm
+    partial class ProductsByMoleculeView
     {
         /// <summary>
         /// Required designer variable.

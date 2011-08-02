@@ -13,7 +13,7 @@ namespace AtomTester
     public partial class EquivalentView : Form
     {
         private SyndicationFeed productsFeedSearched;
-        private ProductDetail productDetailForm;
+        private ProductDetailView productDetailForm;
         private Uri productsUri;
  
         public EquivalentView(Uri productsUri,String title)
@@ -54,7 +54,7 @@ namespace AtomTester
             {
                 Product product = (Product)productDataGridView.Rows[e.RowIndex].DataBoundItem;
 
-                productDetailForm = new ProductDetail(product.ProductRelativeUri);
+                productDetailForm = new ProductDetailView(product.ProductRelativeUri);
                 productDetailForm.Visible = true;
 
             }

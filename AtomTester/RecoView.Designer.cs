@@ -1,6 +1,6 @@
 ﻿namespace AtomTester
 {
-    partial class RecoForm
+    partial class RecoView
     {
         /// <summary>
         /// Required designer variable.

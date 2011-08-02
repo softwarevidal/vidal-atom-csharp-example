@@ -11,17 +11,17 @@ using System.ServiceModel.Syndication;
 namespace AtomTester
 {
  
-    public partial class ProductsAndPacksByCompanyForm : Form
+    public partial class ProductsAndPacksByCompanyView : Form
     {
         private SyndicationFeed productsFeedSearched;
         private readonly IList<Product> productsPrescription = new List<Product>();
         
-        private ProductDetail productDetailForm;
-        private PackDetail packDetailForm;
+        private ProductDetailView productDetailForm;
+        private PackDetailView packDetailForm;
         private Uri productsUri;
         private Uri packagesUri;
  
-        public ProductsAndPacksByCompanyForm(Uri productsUri, Uri packagesUri)
+        public ProductsAndPacksByCompanyView(Uri productsUri, Uri packagesUri)
         {
             InitializeComponent();
             this.productsUri = productsUri;
@@ -170,7 +170,7 @@ namespace AtomTester
             {
                 Product product = (Product)productDataGridView.Rows[e.RowIndex].DataBoundItem;
 
-                productDetailForm = new ProductDetail(product.ProductRelativeUri);
+                productDetailForm = new ProductDetailView(product.ProductRelativeUri);
                 productDetailForm.Visible = true;
 
             }
@@ -183,7 +183,7 @@ namespace AtomTester
             {
                 Package pack = (Package)accessoryDataGridView.Rows[e.RowIndex].DataBoundItem;
 
-                packDetailForm = new PackDetail(pack.packageRelativeUri);
+                packDetailForm = new PackDetailView(pack.packageRelativeUri);
                 packDetailForm.Visible = true;
 
             }
@@ -195,7 +195,7 @@ namespace AtomTester
             {
                 Package pack = (Package)nonPharma1DataGridView.Rows[e.RowIndex].DataBoundItem;
 
-                packDetailForm = new PackDetail(pack.packageRelativeUri);
+                packDetailForm = new PackDetailView(pack.packageRelativeUri);
                 packDetailForm.Visible = true;
 
             }
@@ -207,7 +207,7 @@ namespace AtomTester
             {
                 Package pack = (Package)dieteticDataGridView.Rows[e.RowIndex].DataBoundItem;
 
-                packDetailForm = new PackDetail(pack.packageRelativeUri);
+                packDetailForm = new PackDetailView(pack.packageRelativeUri);
                 packDetailForm.Visible = true;
 
             }
@@ -219,7 +219,7 @@ namespace AtomTester
             {
                 Package pack = (Package)balneoDataGridView.Rows[e.RowIndex].DataBoundItem;
 
-                packDetailForm = new PackDetail(pack.packageRelativeUri);
+                packDetailForm = new PackDetailView(pack.packageRelativeUri);
                 packDetailForm.Visible = true;
 
             }

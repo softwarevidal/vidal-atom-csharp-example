@@ -10,15 +10,15 @@ using System.ServiceModel.Syndication;
 
 namespace AtomTester
 {
-    public partial class ProductsByMoleculeForm : Form
+    public partial class ProductsByMoleculeView : Form
     {
-        private ProductDetail productDetailForm;
+        private ProductDetailView productDetailForm;
         private SyndicationFeed productsFeedSearched;
         private Uri uri;
         private static String ONLY = "ONLY";
         private static String ASSOCIATED = "ASSOCIATED";
 
-        public ProductsByMoleculeForm(Uri uri)
+        public ProductsByMoleculeView(Uri uri)
         {
             InitializeComponent();
             this.uri = uri;
@@ -60,7 +60,7 @@ namespace AtomTester
             {
                 Product product = (Product)productDataGridView.Rows[e.RowIndex].DataBoundItem;
 
-                productDetailForm = new ProductDetail(product.ProductRelativeUri);
+                productDetailForm = new ProductDetailView(product.ProductRelativeUri);
                 productDetailForm.Visible = true;
 
             }
@@ -85,7 +85,7 @@ namespace AtomTester
             {
                 Product product = (Product)productMolecAssociatedGridView.Rows[e.RowIndex].DataBoundItem;
 
-                productDetailForm = new ProductDetail(product.ProductRelativeUri);
+                productDetailForm = new ProductDetailView(product.ProductRelativeUri);
                 productDetailForm.Visible = true;
 
             }

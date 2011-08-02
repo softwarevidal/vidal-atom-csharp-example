@@ -11,20 +11,20 @@ using System.Diagnostics;
 
 namespace AtomTester
 {
-    public partial class SearchForm : Form
+    public partial class SearchView : Form
     {
         private SyndicationFeed productsFeedSearched;
         
        
         private readonly IList<Product> productsPrescription = new List<Product>();
         
-        private ProductDetail productDetailForm;
-        private PackDetail packDetailForm;
-        private ProductsByMoleculeForm productByMoleculeForm;
-        private ProductsAndPacksByCompanyForm productsAndPacksByCompanyForm;
-        private RecoForm recoForm;
+        private ProductDetailView productDetailForm;
+        private PackDetailView packDetailForm;
+        private ProductsByMoleculeView productByMoleculeForm;
+        private ProductsAndPacksByCompanyView productsAndPacksByCompanyForm;
+        private RecoView recoForm;
 
-        public SearchForm()
+        public SearchView()
         {
             InitializeComponent();
             RestUtils.setServerParameters(urlTextBox.Text);
@@ -190,7 +190,7 @@ namespace AtomTester
             if (e.RowIndex > -1){
                Product product =  (Product)productDataGridView.Rows[e.RowIndex].DataBoundItem;
               
-               productDetailForm = new ProductDetail(product.ProductRelativeUri);
+               productDetailForm = new ProductDetailView(product.ProductRelativeUri);
                 productDetailForm.Visible = true;
 
         }
@@ -287,7 +287,7 @@ namespace AtomTester
             {
                 Package pack = (Package)accessoryDataGridView.Rows[e.RowIndex].DataBoundItem;
 
-                packDetailForm = new PackDetail(pack.packageRelativeUri);
+                packDetailForm = new PackDetailView(pack.packageRelativeUri);
                 packDetailForm.Visible = true;
 
             }
@@ -299,7 +299,7 @@ namespace AtomTester
             {
                 Package pack = (Package)nonPharma1DataGridView.Rows[e.RowIndex].DataBoundItem;
 
-                packDetailForm = new PackDetail(pack.packageRelativeUri);
+                packDetailForm = new PackDetailView(pack.packageRelativeUri);
                 packDetailForm.Visible = true;
 
             }
@@ -311,7 +311,7 @@ namespace AtomTester
             {
                 Package pack = (Package)dieteticDataGridView.Rows[e.RowIndex].DataBoundItem;
 
-                packDetailForm = new PackDetail(pack.packageRelativeUri);
+                packDetailForm = new PackDetailView(pack.packageRelativeUri);
                 packDetailForm.Visible = true;
 
             }
@@ -323,7 +323,7 @@ namespace AtomTester
             {
                 Package pack = (Package)balneoDataGridView.Rows[e.RowIndex].DataBoundItem;
 
-                packDetailForm = new PackDetail(pack.packageRelativeUri);
+                packDetailForm = new PackDetailView(pack.packageRelativeUri);
                 packDetailForm.Visible = true;
 
             }
@@ -335,7 +335,7 @@ namespace AtomTester
             {
                Reco reco = (Reco)recosDataGridView.Rows[e.RowIndex].DataBoundItem;
 
-                recoForm = new RecoForm(reco.recolink);
+                recoForm = new RecoView(reco.recolink);
                 recoForm.Visible = true;
 
             }
@@ -347,7 +347,7 @@ namespace AtomTester
             {
                 MoleculeSynonym molec = (MoleculeSynonym)moleculesDataGridView.Rows[e.RowIndex].DataBoundItem;
 
-                productByMoleculeForm = new ProductsByMoleculeForm(molec.productsLink);
+                productByMoleculeForm = new ProductsByMoleculeView(molec.productsLink);
                 productByMoleculeForm.Visible = true;
 
             }
@@ -362,7 +362,7 @@ namespace AtomTester
             {
                 Company company = (Company)companyDataGridView.Rows[e.RowIndex].DataBoundItem;
 
-                productsAndPacksByCompanyForm = new ProductsAndPacksByCompanyForm(company.productsLink,company.packagesLink);
+                productsAndPacksByCompanyForm = new ProductsAndPacksByCompanyView(company.productsLink,company.packagesLink);
                 productsAndPacksByCompanyForm.Visible = true;
 
             }

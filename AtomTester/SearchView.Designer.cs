@@ -1,6 +1,6 @@
 ﻿namespace AtomTester
 {
-    partial class SearchForm
+    partial class SearchView
     {
         /// <summary>
         /// Variable nécessaire au concepteur.

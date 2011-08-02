@@ -10,9 +10,9 @@ using System.ServiceModel.Syndication;
 
 namespace AtomTester
 {
-    public partial class RecoForm : Form
+    public partial class RecoView : Form
     {
-        public RecoForm(Uri recoLink)
+        public RecoView(Uri recoLink)
         {
             InitializeComponent();
             SyndicationFeed reco = RestUtils.getFeedByUri(recoLink);

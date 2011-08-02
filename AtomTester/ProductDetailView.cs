@@ -11,11 +11,11 @@ using System.ServiceModel.Syndication;
 namespace AtomTester
 {
 
-    public partial class ProductDetail : Form
+    public partial class ProductDetailView : Form
     {
 
         private ProductDetailAggregate pd;
-        public ProductDetail(Uri uri)
+        public ProductDetailView(Uri uri)
         {
             InitializeComponent();
             this.pd = (RestUtils.getProductDetail(uri));

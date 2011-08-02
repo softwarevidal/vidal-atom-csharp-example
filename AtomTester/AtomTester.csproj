@@ -55,42 +55,42 @@
     <Compile Include="EquivalentView.Designer.cs">
       <DependentUpon>EquivalentView.cs</DependentUpon>
     </Compile>
-    <Compile Include="PackDetail.cs">
+    <Compile Include="PackDetailView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PackDetail.Designer.cs">
-      <DependentUpon>PackDetail.cs</DependentUpon>
+    <Compile Include="PackDetailView.Designer.cs">
+      <DependentUpon>PackDetailView.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductDetail.cs">
+    <Compile Include="ProductDetailView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductDetail.Designer.cs">
-      <DependentUpon>ProductDetail.cs</DependentUpon>
+    <Compile Include="ProductDetailView.Designer.cs">
+      <DependentUpon>ProductDetailView.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductsAndPacksByCompanyForm.cs">
+    <Compile Include="ProductsAndPacksByCompanyView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductsAndPacksByCompanyForm.Designer.cs">
-      <DependentUpon>ProductsAndPacksByCompanyForm.cs</DependentUpon>
+    <Compile Include="ProductsAndPacksByCompanyView.Designer.cs">
+      <DependentUpon>ProductsAndPacksByCompanyView.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductsByMoleculeForm.cs">
+    <Compile Include="ProductsByMoleculeView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductsByMoleculeForm.Designer.cs">
-      <DependentUpon>ProductsByMoleculeForm.cs</DependentUpon>
+    <Compile Include="ProductsByMoleculeView.Designer.cs">
+      <DependentUpon>ProductsByMoleculeView.cs</DependentUpon>
     </Compile>
-    <Compile Include="RecoForm.cs">
+    <Compile Include="RecoView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RecoForm.Designer.cs">
-      <DependentUpon>RecoForm.cs</DependentUpon>
+    <Compile Include="RecoView.Designer.cs">
+      <DependentUpon>RecoView.cs</DependentUpon>
     </Compile>
     <Compile Include="RestUtils.cs" />
-    <Compile Include="SearchForm.cs">
+    <Compile Include="SearchView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SearchForm.Designer.cs">
-      <DependentUpon>SearchForm.cs</DependentUpon>
+    <Compile Include="SearchView.Designer.cs">
+      <DependentUpon>SearchView.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -109,17 +109,17 @@
     <EmbeddedResource Include="EquivalentView.resx">
       <DependentUpon>EquivalentView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PackDetail.resx">
-      <DependentUpon>PackDetail.cs</DependentUpon>
+    <EmbeddedResource Include="PackDetailView.resx">
+      <DependentUpon>PackDetailView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductDetail.resx">
-      <DependentUpon>ProductDetail.cs</DependentUpon>
+    <EmbeddedResource Include="ProductDetailView.resx">
+      <DependentUpon>ProductDetailView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductsAndPacksByCompanyForm.resx">
-      <DependentUpon>ProductsAndPacksByCompanyForm.cs</DependentUpon>
+    <EmbeddedResource Include="ProductsAndPacksByCompanyView.resx">
+      <DependentUpon>ProductsAndPacksByCompanyView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductsByMoleculeForm.resx">
-      <DependentUpon>ProductsByMoleculeForm.cs</DependentUpon>
+    <EmbeddedResource Include="ProductsByMoleculeView.resx">
+      <DependentUpon>ProductsByMoleculeView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -131,11 +131,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="RecoForm.resx">
-      <DependentUpon>RecoForm.cs</DependentUpon>
+    <EmbeddedResource Include="RecoView.resx">
+      <DependentUpon>RecoView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SearchForm.resx">
-      <DependentUpon>SearchForm.cs</DependentUpon>
+    <EmbeddedResource Include="SearchView.resx">
+      <DependentUpon>SearchView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="ClassDiagram1.cd" />

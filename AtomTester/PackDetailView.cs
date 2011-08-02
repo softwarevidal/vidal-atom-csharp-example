@@ -11,9 +11,9 @@ using AtomTester.VidalDTO;
 
 namespace AtomTester
 {
-    public partial class PackDetail : Form
+    public partial class PackDetailView : Form
     {
-        public PackDetail(Uri uri)
+        public PackDetailView(Uri uri)
         {
             InitializeComponent();
             PackageDetailAggregate packDetail = RestUtils.getDetailAggregatePackageByUri(uri);
