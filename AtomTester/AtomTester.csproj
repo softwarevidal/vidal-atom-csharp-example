@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AtomTester</RootNamespace>
     <AssemblyName>AtomTester</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -55,12 +55,21 @@
     <Compile Include="EquivalentView.Designer.cs">
       <DependentUpon>EquivalentView.cs</DependentUpon>
     </Compile>
+    <Compile Include="PrescriptionLine.cs" />
+    <Compile Include="Prescription.cs" />
+    <Compile Include="OrdoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrdoForm.Designer.cs">
+      <DependentUpon>OrdoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PackDetailView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PackDetailView.Designer.cs">
       <DependentUpon>PackDetailView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Patient.cs" />
     <Compile Include="ProductDetailView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,7 +103,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TreeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TreeForm.Designer.cs">
+      <DependentUpon>TreeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="VidalDTO\Company.cs" />
+    <Compile Include="VidalDTO\AtcClassification.cs" />
     <Compile Include="VidalDTO\MoleculeSynonym.cs" />
     <Compile Include="VidalDTO\Lppr.cs" />
     <Compile Include="VidalDTO\SaumonClassification.cs" />
@@ -108,6 +124,9 @@
     <Compile Include="VidalDTO\VidalClassification.cs" />
     <EmbeddedResource Include="EquivalentView.resx">
       <DependentUpon>EquivalentView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrdoForm.resx">
+      <DependentUpon>OrdoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PackDetailView.resx">
       <DependentUpon>PackDetailView.cs</DependentUpon>
@@ -136,6 +155,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SearchView.resx">
       <DependentUpon>SearchView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TreeForm.resx">
+      <DependentUpon>TreeForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="ClassDiagram1.cd" />

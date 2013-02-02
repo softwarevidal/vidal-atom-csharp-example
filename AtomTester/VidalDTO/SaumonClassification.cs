@@ -10,12 +10,14 @@ namespace AtomTester
         public String id;
         public String name;
         public Uri parentLink;
+        public Uri productsLink; 
 
-        public SaumonClassification(String id, String name, Uri parentLink)
+        public SaumonClassification(String id, String name, Uri parentLink,Uri productsLink)
         {
             this.id = id;
             this.name = name;
             this.parentLink = parentLink;
+            this.productsLink = productsLink;
         }
     }
 }

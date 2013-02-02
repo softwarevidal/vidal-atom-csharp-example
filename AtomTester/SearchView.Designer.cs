@@ -36,19 +36,27 @@
             this.productResultLabel = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.urlTextBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.productDataGridView = new System.Windows.Forms.DataGridView();
             this.BeCareful = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CompanyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RefundRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Liste = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DispensationPlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GenericType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MarketStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.accessoryDataGridView = new System.Windows.Forms.DataGridView();
+            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.companyNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marketStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LpprCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.packageBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dieteticDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.accessoryResultLabel = new System.Windows.Forms.Label();
             this.accessoryNextButton = new System.Windows.Forms.Button();
             this.accessoryBackButton = new System.Windows.Forms.Button();
@@ -60,7 +68,15 @@
             this.dieteticResultSet = new System.Windows.Forms.NumericUpDown();
             this.dieteticPage = new System.Windows.Forms.NumericUpDown();
             this.nonPharma1DataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.balneoDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nonPharmaResultSet = new System.Windows.Forms.NumericUpDown();
             this.nonPharmaPage = new System.Windows.Forms.NumericUpDown();
             this.nonPharmaResultLabel = new System.Windows.Forms.Label();
@@ -77,6 +93,8 @@
             this.recosNextButton = new System.Windows.Forms.Button();
             this.recosPrevButton = new System.Windows.Forms.Button();
             this.recosDataGridView = new System.Windows.Forms.DataGridView();
+            this.nameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.recoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -90,7 +108,10 @@
             this.companyNextButton = new System.Windows.Forms.Button();
             this.companyPrevButton = new System.Windows.Forms.Button();
             this.companyDataGridView = new System.Windows.Forms.DataGridView();
+            this.nameDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Indications = new System.Windows.Forms.GroupBox();
+            this.indicationTreeView = new System.Windows.Forms.TreeView();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.moleculeResultSet = new System.Windows.Forms.NumericUpDown();
             this.moleculesPage = new System.Windows.Forms.NumericUpDown();
@@ -98,36 +119,18 @@
             this.moleucleNextButton = new System.Windows.Forms.Button();
             this.moleculePrevButton = new System.Windows.Forms.Button();
             this.moleculesDataGridView = new System.Windows.Forms.DataGridView();
-            this.indicationTreeView = new System.Windows.Forms.TreeView();
             this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.moleculeSynonymBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nameDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.companyNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.marketStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.packageBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.recoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button2 = new System.Windows.Forms.Button();
             this.recoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accessoryDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.packageBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dieteticDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accessoryResultSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accessoryPage)).BeginInit();
@@ -142,6 +145,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.recosResultSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recosPage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recosDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recoBindingSource1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -152,16 +156,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.companyResultSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyPage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
             this.Indications.SuspendLayout();
             this.groupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.moleculeResultSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.moleculesPage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.moleculesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.moleculeSynonymBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.packageBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.recoBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -235,24 +236,6 @@
             0,
             0});
             // 
-            // urlTextBox
-            // 
-            this.urlTextBox.Location = new System.Drawing.Point(59, 2);
-            this.urlTextBox.Name = "urlTextBox";
-            this.urlTextBox.Size = new System.Drawing.Size(279, 20);
-            this.urlTextBox.TabIndex = 15;
-            this.urlTextBox.Text = "http://107.20.249.150/rest";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(345, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Change Server";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // productDataGridView
             // 
             this.productDataGridView.AllowUserToDeleteRows = false;
@@ -282,6 +265,13 @@
             this.BeCareful.HeaderText = "BeCareful";
             this.BeCareful.Name = "BeCareful";
             this.BeCareful.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // CompanyName
             // 
@@ -325,6 +315,10 @@
             this.MarketStatus.Name = "MarketStatus";
             this.MarketStatus.ReadOnly = true;
             // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataSource = typeof(Product);
+            // 
             // accessoryDataGridView
             // 
             this.accessoryDataGridView.AutoGenerateColumns = false;
@@ -341,12 +335,37 @@
             this.accessoryDataGridView.TabIndex = 18;
             this.accessoryDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.accessoryDataGridView_CellContentClick);
             // 
+            // nameDataGridViewTextBoxColumn1
+            // 
+            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
+            this.nameDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // companyNameDataGridViewTextBoxColumn
+            // 
+            this.companyNameDataGridViewTextBoxColumn.DataPropertyName = "CompanyName";
+            this.companyNameDataGridViewTextBoxColumn.HeaderText = "CompanyName";
+            this.companyNameDataGridViewTextBoxColumn.Name = "companyNameDataGridViewTextBoxColumn";
+            this.companyNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // marketStatusDataGridViewTextBoxColumn
+            // 
+            this.marketStatusDataGridViewTextBoxColumn.DataPropertyName = "MarketStatus";
+            this.marketStatusDataGridViewTextBoxColumn.HeaderText = "MarketStatus";
+            this.marketStatusDataGridViewTextBoxColumn.Name = "marketStatusDataGridViewTextBoxColumn";
+            this.marketStatusDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // LpprCode
             // 
             this.LpprCode.DataPropertyName = "LpprCode";
             this.LpprCode.HeaderText = "LpprCode";
             this.LpprCode.Name = "LpprCode";
             this.LpprCode.ReadOnly = true;
+            // 
+            // packageBindingSource
+            // 
+            this.packageBindingSource.DataSource = typeof(Package);
             // 
             // dieteticDataGridView
             // 
@@ -365,6 +384,34 @@
             this.dieteticDataGridView.Size = new System.Drawing.Size(428, 117);
             this.dieteticDataGridView.TabIndex = 19;
             this.dieteticDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dieteticDataGridView_CellContentClick);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "CompanyName";
+            this.dataGridViewTextBoxColumn2.HeaderText = "CompanyName";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Lppr";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Lppr";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "MarketStatus";
+            this.dataGridViewTextBoxColumn4.HeaderText = "MarketStatus";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // accessoryResultLabel
             // 
@@ -490,6 +537,34 @@
             this.nonPharma1DataGridView.TabIndex = 30;
             this.nonPharma1DataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.nonPharma1DataGridView_CellContentClick);
             // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "CompanyName";
+            this.dataGridViewTextBoxColumn6.HeaderText = "CompanyName";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Lppr";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Lppr";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "MarketStatus";
+            this.dataGridViewTextBoxColumn8.HeaderText = "MarketStatus";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
             // balneoDataGridView
             // 
             this.balneoDataGridView.AllowUserToDeleteRows = false;
@@ -507,6 +582,34 @@
             this.balneoDataGridView.Size = new System.Drawing.Size(428, 117);
             this.balneoDataGridView.TabIndex = 31;
             this.balneoDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.balneoDataGridView_CellContentClick);
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "CompanyName";
+            this.dataGridViewTextBoxColumn10.HeaderText = "CompanyName";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "Lppr";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Lppr";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "MarketStatus";
+            this.dataGridViewTextBoxColumn12.HeaderText = "MarketStatus";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
             // 
             // nonPharmaResultSet
             // 
@@ -680,6 +783,17 @@
             this.recosDataGridView.TabIndex = 48;
             this.recosDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.recosDataGridView_CellContentClick);
             // 
+            // nameDataGridViewTextBoxColumn2
+            // 
+            this.nameDataGridViewTextBoxColumn2.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn2.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn2.Name = "nameDataGridViewTextBoxColumn2";
+            this.nameDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // recoBindingSource1
+            // 
+            this.recoBindingSource1.DataSource = typeof(AtomTester.Reco);
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.productDataGridView);
@@ -849,6 +963,17 @@
             this.companyDataGridView.TabIndex = 0;
             this.companyDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.companyDataGridView_CellContentClick);
             // 
+            // nameDataGridViewTextBoxColumn3
+            // 
+            this.nameDataGridViewTextBoxColumn3.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn3.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn3.Name = "nameDataGridViewTextBoxColumn3";
+            this.nameDataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // companyBindingSource
+            // 
+            this.companyBindingSource.DataSource = typeof(AtomTester.Company);
+            // 
             // Indications
             // 
             this.Indications.Controls.Add(this.indicationTreeView);
@@ -858,6 +983,13 @@
             this.Indications.TabIndex = 56;
             this.Indications.TabStop = false;
             this.Indications.Text = "Indications";
+            // 
+            // indicationTreeView
+            // 
+            this.indicationTreeView.Location = new System.Drawing.Point(9, 27);
+            this.indicationTreeView.Name = "indicationTreeView";
+            this.indicationTreeView.Size = new System.Drawing.Size(460, 198);
+            this.indicationTreeView.TabIndex = 0;
             // 
             // groupBox8
             // 
@@ -940,13 +1072,6 @@
             this.moleculesDataGridView.TabIndex = 0;
             this.moleculesDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.moleculesDataGridView_CellContentClick);
             // 
-            // indicationTreeView
-            // 
-            this.indicationTreeView.Location = new System.Drawing.Point(9, 27);
-            this.indicationTreeView.Name = "indicationTreeView";
-            this.indicationTreeView.Size = new System.Drawing.Size(460, 198);
-            this.indicationTreeView.TabIndex = 0;
-            // 
             // fullNameDataGridViewTextBoxColumn
             // 
             this.fullNameDataGridViewTextBoxColumn.DataPropertyName = "FullName";
@@ -958,158 +1083,51 @@
             // 
             this.moleculeSynonymBindingSource.DataSource = typeof(AtomTester.MoleculeSynonym);
             // 
-            // nameDataGridViewTextBoxColumn3
+            // button2
             // 
-            this.nameDataGridViewTextBoxColumn3.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn3.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn3.Name = "nameDataGridViewTextBoxColumn3";
-            this.nameDataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // companyBindingSource
-            // 
-            this.companyBindingSource.DataSource = typeof(AtomTester.Company);
-            // 
-            // nameDataGridViewTextBoxColumn1
-            // 
-            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
-            this.nameDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // companyNameDataGridViewTextBoxColumn
-            // 
-            this.companyNameDataGridViewTextBoxColumn.DataPropertyName = "CompanyName";
-            this.companyNameDataGridViewTextBoxColumn.HeaderText = "CompanyName";
-            this.companyNameDataGridViewTextBoxColumn.Name = "companyNameDataGridViewTextBoxColumn";
-            this.companyNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // marketStatusDataGridViewTextBoxColumn
-            // 
-            this.marketStatusDataGridViewTextBoxColumn.DataPropertyName = "MarketStatus";
-            this.marketStatusDataGridViewTextBoxColumn.HeaderText = "MarketStatus";
-            this.marketStatusDataGridViewTextBoxColumn.Name = "marketStatusDataGridViewTextBoxColumn";
-            this.marketStatusDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // packageBindingSource
-            // 
-            this.packageBindingSource.DataSource = typeof(Package);
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "CompanyName";
-            this.dataGridViewTextBoxColumn6.HeaderText = "CompanyName";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Lppr";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Lppr";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "MarketStatus";
-            this.dataGridViewTextBoxColumn8.HeaderText = "MarketStatus";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "CompanyName";
-            this.dataGridViewTextBoxColumn2.HeaderText = "CompanyName";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Lppr";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Lppr";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "MarketStatus";
-            this.dataGridViewTextBoxColumn4.HeaderText = "MarketStatus";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "CompanyName";
-            this.dataGridViewTextBoxColumn10.HeaderText = "CompanyName";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "Lppr";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Lppr";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "MarketStatus";
-            this.dataGridViewTextBoxColumn12.HeaderText = "MarketStatus";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn2
-            // 
-            this.nameDataGridViewTextBoxColumn2.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn2.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn2.Name = "nameDataGridViewTextBoxColumn2";
-            this.nameDataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // recoBindingSource1
-            // 
-            this.recoBindingSource1.DataSource = typeof(AtomTester.Reco);
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // productBindingSource
-            // 
-            this.productBindingSource.DataSource = typeof(Product);
+            this.button2.Location = new System.Drawing.Point(826, 4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(117, 23);
+            this.button2.TabIndex = 57;
+            this.button2.Text = "Classification View";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // recoBindingSource
             // 
             this.recoBindingSource.DataSource = typeof(AtomTester.Reco);
             // 
-            // SearchForm
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "http://api.vidal.fr",
+            "http://dev-galaad.vidal.net:8080/excalibur-rest-snapshot/"});
+            this.comboBox1.Location = new System.Drawing.Point(31, 4);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(372, 21);
+            this.comboBox1.TabIndex = 58;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(949, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 59;
+            this.button1.Text = "Ordo";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            // 
+            // SearchView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1155, 1002);
+            this.ClientSize = new System.Drawing.Size(1189, 750);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.Indications);
             this.Controls.Add(this.groupBox7);
@@ -1121,16 +1139,17 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.nonPharmaNextButton);
             this.Controls.Add(this.nonPharmaPrevButton);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.urlTextBox);
             this.Controls.Add(this.searchBox);
             this.Controls.Add(this.searchButton);
-            this.Name = "SearchForm";
+            this.Name = "SearchView";
             this.Text = "VidalAtomTester";
+            this.Load += new System.EventHandler(this.SearchView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accessoryDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.packageBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dieteticDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accessoryResultSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accessoryPage)).EndInit();
@@ -1145,6 +1164,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.recosResultSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.recosPage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.recosDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recoBindingSource1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -1162,6 +1182,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.companyResultSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyPage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
             this.Indications.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
@@ -1169,10 +1190,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.moleculesPage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.moleculesDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.moleculeSynonymBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.packageBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.recoBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.recoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1189,8 +1206,6 @@
         private System.Windows.Forms.Label productResultLabel;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.TextBox urlTextBox;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView productDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn BeCareful;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
@@ -1276,6 +1291,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn3;
         private System.Windows.Forms.BindingSource companyBindingSource;
         private System.Windows.Forms.TreeView indicationTreeView;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button1;
     }
 }
 

@@ -1,0 +1,16 @@
+D:\Dropbox\AtomTester\AtomTester\obj\x86\Release\AtomTester.EquivalentView.resources
+D:\Dropbox\AtomTester\AtomTester\obj\x86\Release\AtomTester.OrdoForm.resources
+D:\Dropbox\AtomTester\AtomTester\obj\x86\Release\AtomTester.PackDetailView.resources
+D:\Dropbox\AtomTester\AtomTester\obj\x86\Release\AtomTester.ProductDetailView.resources
+D:\Dropbox\AtomTester\AtomTester\obj\x86\Release\AtomTester.ProductsAndPacksByCompanyView.resources
+D:\Dropbox\AtomTester\AtomTester\obj\x86\Release\AtomTester.ProductsByMoleculeView.resources
+D:\Dropbox\AtomTester\AtomTester\obj\x86\Release\AtomTester.Properties.Resources.resources
+D:\Dropbox\AtomTester\AtomTester\obj\x86\Release\AtomTester.RecoView.resources
+D:\Dropbox\AtomTester\AtomTester\obj\x86\Release\AtomTester.SearchView.resources
+D:\Dropbox\AtomTester\AtomTester\obj\x86\Release\AtomTester.TreeForm.resources
+D:\Dropbox\AtomTester\AtomTester\obj\x86\Release\AtomTester.csproj.GenerateResource.Cache
+D:\Dropbox\AtomTester\AtomTester\bin\Release\AtomTester.exe.config
+D:\Dropbox\AtomTester\AtomTester\bin\Release\AtomTester.exe
+D:\Dropbox\AtomTester\AtomTester\bin\Release\AtomTester.pdb
+D:\Dropbox\AtomTester\AtomTester\obj\x86\Release\AtomTester.exe
+D:\Dropbox\AtomTester\AtomTester\obj\x86\Release\AtomTester.pdb

@@ -23,11 +23,13 @@ namespace AtomTester
         private ProductsByMoleculeView productByMoleculeForm;
         private ProductsAndPacksByCompanyView productsAndPacksByCompanyForm;
         private RecoView recoForm;
+        private TreeForm treeForm;
 
         public SearchView()
         {
             InitializeComponent();
-            RestUtils.setServerParameters(urlTextBox.Text);
+            comboBox1.SelectedIndex = 0;
+            RestUtils.setServerParameters(comboBox1.SelectedItem.ToString());
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -46,7 +48,7 @@ namespace AtomTester
             searchMolecules();
             searchCompanies();
 
-            SyndicationFeed indicationTreeFeed = RestUtils.getFeedByUri(new Uri("http://107.20.249.150/rest/rest/api/indications?q=" + searchBox.Text));
+            SyndicationFeed indicationTreeFeed = RestUtils.getFeedByUri(new Uri(comboBox1.SelectedItem.ToString() + "rest/api/indications?q=" + searchBox.Text));
 
             IEnumerable<SyndicationItem> parents = indicationTreeFeed.Items.Where(l => (l.Categories[0].Name == "INDICATION_GROUP"));
             foreach (SyndicationItem parent in parents)
@@ -182,7 +184,7 @@ namespace AtomTester
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            RestUtils.setServerParameters(urlTextBox.Text);
+            RestUtils.setServerParameters(comboBox1.SelectedItem.ToString());
         }
 
         private void productDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -366,6 +368,29 @@ namespace AtomTester
                 productsAndPacksByCompanyForm.Visible = true;
 
             }
+        }
+
+        private void SearchView_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            treeForm = new TreeForm();
+            treeForm.Visible = true;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RestUtils.setServerParameters(comboBox1.SelectedItem.ToString());
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            OrdoForm ordo = new OrdoForm();
+            ordo.Visible = true;
+
         }
 
        

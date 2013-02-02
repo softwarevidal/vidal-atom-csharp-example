@@ -66,37 +66,48 @@ public static class RestUtils
     {
         if (String.IsNullOrEmpty(name))
             return null;
-        return AtomResultRequest(new Uri(serverBaseUri + "/rest/api/products?q=" + name + "&start-page=" + startedPage + "&page-size=" + maxPerPage));
+        return AtomResultRequest(new Uri(serverBaseUri + "rest/api/products?q=" + name + "&start-page=" + startedPage + "&page-size=" + maxPerPage));
     }
     public static SyndicationFeed getPackageFeedsByName(String name, int startedPage, int maxPerPage,String type)
     {
         if (String.IsNullOrEmpty(name))
             return null;
-        return AtomResultRequest(new Uri(serverBaseUri+ "/rest/api/packages?q=" + name +"&type="+type +"&start-page=" + startedPage + "&page-size=" + maxPerPage));
+        return AtomResultRequest(new Uri(serverBaseUri+ "rest/api/packages?q=" + name +"&type="+type +"&start-page=" + startedPage + "&page-size=" + maxPerPage));
     }
 
     public static SyndicationFeed getRecosFeedsByName(String name, int startedPage, int maxPerPage)
     {
         if (String.IsNullOrEmpty(name))
             return null;
-        return AtomResultRequest(new Uri(serverBaseUri+ "/rest/api/recos?q=" + name + "&start-page=" + startedPage + "&page-size=" + maxPerPage));
+        return AtomResultRequest(new Uri(serverBaseUri+ "rest/api/recos?q=" + name + "&start-page=" + startedPage + "&page-size=" + maxPerPage));
     }
 
     public static SyndicationFeed getMoleculeFeedsByName(String name, int startedPage, int maxPerPage)
     {
         if (String.IsNullOrEmpty(name))
             return null;
-        return AtomResultRequest(new Uri(serverBaseUri+ "/rest/api/molecules?q=" + name + "&start-page=" + startedPage + "&page-size=" + maxPerPage));
+        return AtomResultRequest(new Uri(serverBaseUri + "rest/api/molecules/active-substances?q=" + name + "&start-page=" + startedPage + "&page-size=" + maxPerPage));
     }
 
     public static SyndicationFeed getCompaniesFeedsByName(String name, int startedPage, int maxPerPage)
     {
         if (String.IsNullOrEmpty(name))
             return null;
-        return AtomResultRequest(new Uri(serverBaseUri+ "/rest/api/companies?q=" + name + "&start-page=" + startedPage + "&page-size=" + maxPerPage));
+        return AtomResultRequest(new Uri(serverBaseUri+ "rest/api/companies?q=" + name + "&start-page=" + startedPage + "&page-size=" + maxPerPage));
     }
-   
 
+    public static SyndicationFeed getAllAtcFeeds()
+    {
+        return AtomResultRequest(new Uri(serverBaseUri + "rest/api/atc"));
+    }
+    internal static SyndicationFeed getAllVidalFeeds()
+    {
+        return AtomResultRequest(new Uri(serverBaseUri + "rest/api/vidal-classification"));
+    }
+    internal static SyndicationFeed getAllSaumonFeeds()
+    {
+        return AtomResultRequest(new Uri(serverBaseUri + "rest/api/saumon"));
+    }
 
     public static Uri getDocumentRelativeUriBySyndicationFeed(SyndicationFeed documentSyndicationFeed)
     {
@@ -231,7 +242,7 @@ public static class RestUtils
                 parentLinkUri = parentLink.Uri;
             }
 
-            VidalClassification vidalClass = new VidalClassification(id, classifName, parentLinkUri);
+            VidalClassification vidalClass = new VidalClassification(id, classifName, parentLinkUri, parentLinkUri);
             vidalList.Add(vidalClass);
         }
 
@@ -287,6 +298,7 @@ public static class RestUtils
         return recoList;
     }
 
+
     public static List<MoleculeSynonym> getMoleculesBySyndicationFeed(IEnumerable<SyndicationItem> molecules)
     {
         List<MoleculeSynonym> moleculeList = new List<MoleculeSynonym>();
@@ -294,7 +306,7 @@ public static class RestUtils
         {
             int moleculeId = item.ElementExtensions.ReadElementExtensions<int>("id", vidalNameSpace).FirstOrDefault();;
             String moleculeName = item.Title.Text;
-            Uri productsLink = new Uri(serverBaseUri + "/rest/api/molecule/"+moleculeId+"/products?"+"substance-type=ACTIVE_PRINCIPLE");
+            Uri productsLink = new Uri(serverBaseUri + "rest/api/molecule/"+moleculeId+"/products?"+"substance-type=ACTIVE_PRINCIPLE");
             //fixMe : link is not good : /rest/api/molecule/2036/products?substanceType-type=ACTIVE_PRINCIPLE in place of "substance-type=ACTIVE_PRINCIPLE&association-type=ONLY"
             //SyndicationLink productsSyndicationLink = item.Links.FirstOrDefault(l => (l.Title == "PRODUCTS"));
             //if (productsSyndicationLink != null)
@@ -406,7 +418,7 @@ public static class RestUtils
                 parentLinkUri = parentLink.Uri;
             }
 
-            SaumonClassification saumonClass = new SaumonClassification(id, classifName, parentLinkUri);
+            SaumonClassification saumonClass = new SaumonClassification(id, classifName, parentLinkUri,null);
             saumonList.Add(saumonClass);
         }
         packDetail.saumons = saumonList;
@@ -430,5 +442,85 @@ public static class RestUtils
         return packDetail;
     }
 
-    
+    public static List<VidalClassification> getVidalBySyndicationFeed(IEnumerable<SyndicationItem> vidals)
+    {
+        List<VidalClassification> vidalList = new List<VidalClassification>();
+        foreach (SyndicationItem item in vidals)
+        {
+            string ractName = item.Title.Text;
+            int id = item.ElementExtensions.ReadElementExtensions<int>("id", vidalNameSpace).FirstOrDefault();
+            string feedid = item.Id;
+            Uri altLink = null;
+            SyndicationLink altSyndicationLink = item.Links.FirstOrDefault(l => (l.RelationshipType == "inline"));
+            if (altSyndicationLink != null)
+            {
+                altLink = altSyndicationLink.Uri;
+            }
+
+            SyndicationLink productsLinkFeed = (item.Links.FirstOrDefault(l => (l.Title == "PRODUCTS")));
+            Uri productsLink = null;
+            if (productsLinkFeed != null)
+            {
+                productsLink = productsLinkFeed.Uri;
+            }
+
+            VidalClassification vidal = new VidalClassification(feedid, ractName, altLink, productsLink);
+            vidalList.Add(vidal);
+        }
+        return vidalList;
+    }
+
+    public static List<SaumonClassification> getSaumonBySyndicationFeed(IEnumerable<SyndicationItem> saumons)
+    {
+        List<SaumonClassification> saumonList = new List<SaumonClassification>();
+        foreach (SyndicationItem item in saumons)
+        {
+            string ractName = item.Title.Text;
+            int id = item.ElementExtensions.ReadElementExtensions<int>("id", vidalNameSpace).FirstOrDefault();
+            string feedid = item.Id;
+            Uri altLink = null;
+            SyndicationLink altSyndicationLink = item.Links.FirstOrDefault(l => (l.RelationshipType == "inline"));
+            if (altSyndicationLink != null)
+            {
+                altLink = altSyndicationLink.Uri;
+            }
+            SyndicationLink packagesLinkFeed = (item.Links.FirstOrDefault(l => (l.Title == "PACKAGES")));
+            Uri packagesLink = null;
+            if (packagesLinkFeed != null)
+            {
+                packagesLink = packagesLinkFeed.Uri;
+            }
+
+
+            SaumonClassification saumon = new SaumonClassification(feedid, ractName, altLink, packagesLink);
+            saumonList.Add(saumon);
+        }
+        return saumonList;
+    }
+    public static List<AtcClassification> getAtcBySyndicationFeed(IEnumerable<SyndicationItem> atcs)
+    {
+        List<AtcClassification> atcList = new List<AtcClassification>();
+        foreach (SyndicationItem item in atcs)
+        {
+            string ractName = item.Title.Text;
+            int id = item.ElementExtensions.ReadElementExtensions<int>("id", vidalNameSpace).FirstOrDefault();
+            string feedid = item.Id;
+            Uri altLink = null;
+            SyndicationLink altSyndicationLink = item.Links.FirstOrDefault(l => (l.RelationshipType == "inline"));
+            if (altSyndicationLink != null)
+            {
+                altLink = altSyndicationLink.Uri;
+            }
+            SyndicationLink productsLinkFeed = (item.Links.FirstOrDefault(l => (l.Title == "PRODUCTS")));
+            Uri productsLink = null;
+            if (productsLinkFeed != null)
+            {
+                productsLink = productsLinkFeed.Uri;
+            }
+
+            AtcClassification atc = new AtcClassification(id,feedid, ractName, altLink,productsLink);
+            atcList.Add(atc);
+        }
+        return atcList;
+    }
 }

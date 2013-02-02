@@ -5,18 +5,20 @@ using System.Text;
 
 namespace AtomTester
 {
-   public class VidalClassification
+   public class AtcClassification
     {
-        public String id;
+        public String feedid;
         public String name;
         public Uri parentLink;
+        public int id;
         public Uri productsLink;
 
-        public VidalClassification(String id, String name, Uri parentLink, Uri productsLink)
+        public AtcClassification(int id,String feedid, String name, Uri parentLink, Uri productsLink)
         {
-            this.id = id;
+            this.feedid = feedid;
             this.name = name;
             this.parentLink = parentLink;
+            this.id = id;
             this.productsLink = productsLink;
         }
     }

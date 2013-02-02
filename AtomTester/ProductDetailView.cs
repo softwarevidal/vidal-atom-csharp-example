@@ -98,7 +98,7 @@ namespace AtomTester
         {
             if (pd.product.vmpId != null)
             {
-                EquivalentView form = new EquivalentView(new Uri(RestUtils.getServerParameters() + "/rest/api/vmp/"+pd.product.vmpId+"/products?"), pd.product.vmp + " : Products");
+                EquivalentView form = new EquivalentView(new Uri(RestUtils.getServerParameters() + "rest/api/vmp/"+pd.product.vmpId+"/products?"), pd.product.vmp + " : Products");
                 form.Visible = true;
             }
         }      

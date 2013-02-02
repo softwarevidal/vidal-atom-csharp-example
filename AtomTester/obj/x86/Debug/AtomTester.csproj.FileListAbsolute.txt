@@ -10,28 +10,69 @@ D:\src\c++\c#\AtomTester\AtomTester\obj\x86\Debug\GenerateResource-ResGen.read.1
 D:\src\c++\c#\AtomTester\AtomTester\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
 E:\dropBox\Dropbox\AtomTester\AtomTester\bin\Debug\AtomTester.exe.config
 E:\dropBox\Dropbox\AtomTester\AtomTester\obj\x86\Debug\ResolveAssemblyReference.cache
-E:\dropBox\Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.ProductDetail.resources
 E:\dropBox\Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.Properties.Resources.resources
-E:\dropBox\Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.SearchForm.resources
-E:\dropBox\Dropbox\AtomTester\AtomTester\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
-E:\dropBox\Dropbox\AtomTester\AtomTester\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
 E:\dropBox\Dropbox\AtomTester\AtomTester\bin\Debug\AtomTester.exe
 E:\dropBox\Dropbox\AtomTester\AtomTester\bin\Debug\AtomTester.pdb
 E:\dropBox\Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.exe
 E:\dropBox\Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.pdb
 C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.PackDetail.resources
-C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.ProductDetail.resources
-C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.ProductsByMoleculeForm.resources
 C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.Properties.Resources.resources
-C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.RecoForm.resources
-C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.SearchForm.resources
 C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
 C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
-C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.ProductsAndPacksByCompanyForm.resources
 C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\bin\Debug\AtomTester.exe.config
 C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\bin\Debug\AtomTester.exe
 C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\bin\Debug\AtomTester.pdb
 C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.exe
 C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.pdb
 C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.EquivalentView.resources
+C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.PackDetailView.resources
+C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.ProductDetailView.resources
+C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.ProductsAndPacksByCompanyView.resources
+C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.ProductsByMoleculeView.resources
+C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.RecoView.resources
+C:\Documents and Settings\ncauvet\Mes documents\My Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.SearchView.resources
+E:\dropbox\Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.EquivalentView.resources
+E:\dropbox\Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.PackDetailView.resources
+E:\dropbox\Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.ProductDetailView.resources
+E:\dropbox\Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.ProductsAndPacksByCompanyView.resources
+E:\dropbox\Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.ProductsByMoleculeView.resources
+E:\dropbox\Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.RecoView.resources
+E:\dropbox\Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.SearchView.resources
+C:\Users\vidalsoftware\Dropbox\AtomTester\AtomTester\bin\Debug\AtomTester.exe.config
+C:\Users\vidalsoftware\Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.exe
+C:\Users\vidalsoftware\Dropbox\AtomTester\AtomTester\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\vidalsoftware\Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.EquivalentView.resources
+C:\Users\vidalsoftware\Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.PackDetailView.resources
+C:\Users\vidalsoftware\Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.ProductDetailView.resources
+C:\Users\vidalsoftware\Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.ProductsAndPacksByCompanyView.resources
+C:\Users\vidalsoftware\Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.ProductsByMoleculeView.resources
+C:\Users\vidalsoftware\Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.Properties.Resources.resources
+C:\Users\vidalsoftware\Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.RecoView.resources
+C:\Users\vidalsoftware\Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.SearchView.resources
+C:\Users\vidalsoftware\Dropbox\AtomTester\AtomTester\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Users\vidalsoftware\Dropbox\AtomTester\AtomTester\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\vidalsoftware\Dropbox\AtomTester\AtomTester\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Users\vidalsoftware\Dropbox\AtomTester\AtomTester\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\vidalsoftware\Dropbox\AtomTester\AtomTester\bin\Debug\AtomTester.exe
+C:\Users\vidalsoftware\Dropbox\AtomTester\AtomTester\bin\Debug\AtomTester.pdb
+C:\Users\vidalsoftware\Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.pdb
+E:\dropbox\Dropbox\AtomTester\AtomTester\obj\x86\Debug\GenerateResource.read.1.tlog
+E:\dropbox\Dropbox\AtomTester\AtomTester\obj\x86\Debug\GenerateResource.write.1.tlog
+E:\dropbox\Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.TreeForm.resources
+D:\Dropbox\AtomTester\AtomTester\bin\Debug\AtomTester.exe.config
+D:\Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.exe
+D:\Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.pdb
+D:\Dropbox\AtomTester\AtomTester\bin\Debug\AtomTester.exe
+D:\Dropbox\AtomTester\AtomTester\bin\Debug\AtomTester.pdb
+D:\Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.EquivalentView.resources
+D:\Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.OrdoForm.resources
+D:\Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.PackDetailView.resources
+D:\Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.ProductDetailView.resources
+D:\Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.ProductsAndPacksByCompanyView.resources
+D:\Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.ProductsByMoleculeView.resources
+D:\Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.Properties.Resources.resources
+D:\Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.RecoView.resources
+D:\Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.SearchView.resources
+D:\Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.TreeForm.resources
+D:\Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.csproj.GenerateResource.Cache
+D:\Dropbox\AtomTester\AtomTester\obj\x86\Debug\AtomTester.csprojResolveAssemblyReference.cache
